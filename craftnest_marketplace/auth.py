@@ -5,7 +5,7 @@
 import frappe
 
 
-def validate(login_manager):
+def validate():
     """Validate authentication for CraftNest users"""
     # Custom authentication validation logic can be added here
-    pass
+    return
