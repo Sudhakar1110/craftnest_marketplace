@@ -57,15 +57,14 @@ def send_seller_performance_summary():
             from datetime import datetime, timedelta
             week_ago = frappe.utils.add_days(frappe.utils.today(), -7)
             
-            weekly_orders = frappe.get_all(
-                "Craft Order co",
-                filters={
-                    "co.docstatus": 1,
-                    "oi.artisan": artisan.name
-                },
-                fields=["co.name"],
-                filters={"co.order_date": [">=", week_ago]}
-            )
+            weekly_orders = frappe.db.sql("""
+                SELECT DISTINCT co.name
+                FROM `tabCraft Order` co
+                INNER JOIN `tabOrder Item` oi ON oi.parent = co.name
+                WHERE co.docstatus = 1
+                    AND oi.artisan = %s
+                    AND co.order_date >= %s
+            """, (artisan.name, week_ago), as_dict=1)
             
             weekly_sales = len(weekly_orders)
             
