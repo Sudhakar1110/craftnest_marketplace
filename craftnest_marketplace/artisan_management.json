@@ -1,6 +1,14 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Artisan Management\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Quick Access\",\"col\":12}},{\"type\":\"link\",\"data\":{\"text\":\"Artisan Profiles\",\"link_to\":\"Artisan Profile\",\"link_type\":\"DocType\",\"col\":4}},{\"type\":\"link\",\"data\":{\"text\":\"Artisan Shops\",\"link_to\":\"Artisan Shop\",\"link_type\":\"DocType\",\"col\":4}},{\"type\":\"link\",\"data\":{\"text\":\"Verifications\",\"link_to\":\"Artisan Verification\",\"link_type\":\"DocType\",\"col\":4}}]",
+ "number_cards": [
+  {
+   "number_card_name": "Total Artisans"
+  },
+  {
+   "number_card_name": "Pending Verifications"
+  }
+ ],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Artisan Management\",\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Artisans\",\"col\":6}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Pending Verifications\",\"col\":6}},{\"type\":\"card_break\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Quick Access\",\"col\":12}},{\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Recent Artisans\",\"col\":6}},{\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Pending Verifications\",\"col\":6}},{\"type\":\"link\",\"data\":{\"text\":\"Artisan Profiles\",\"link_to\":\"Artisan Profile\",\"link_type\":\"DocType\",\"col\":4}},{\"type\":\"link\",\"data\":{\"text\":\"Artisan Shops\",\"link_to\":\"Artisan Shop\",\"link_type\":\"DocType\",\"col\":4}},{\"type\":\"link\",\"data\":{\"text\":\"Verifications\",\"link_to\":\"Artisan Verification\",\"link_type\":\"DocType\",\"col\":4}}]",
  "creation": "2026-06-18 10:00:00.000000",
  "custom_blocks": [],
  "docstatus": 0,
@@ -45,9 +53,16 @@
  "module": "Artisan Management",
  "name": "Artisan Management",
  "owner": "Administrator",
- "parent_page": "",
+ "parent_page": "CraftNest Dashboard",
  "public": 1,
- "quick_lists": [],
+ "quick_lists": [
+  {
+   "quick_list_name": "Recent Artisans"
+  },
+  {
+   "quick_list_name": "Pending Verifications"
+  }
+ ],
  "roles": [
   {
    "role": "CraftNest Administrator"
