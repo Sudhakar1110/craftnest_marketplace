@@ -1,0 +1,22 @@
+{
+ "aggregate_function_based_on": "",
+ "color": "#FF6B6B",
+ "creation": "2026-06-18 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Craft Product",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[[\"Craft Product\",\"stock_status\",\"in\",[\"Low Stock\",\"Out of Stock\"],false]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Low Stock Items",
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Product Management",
+ "name": "Low Stock Items",
+ "owner": "Administrator",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Monthly"
+}
