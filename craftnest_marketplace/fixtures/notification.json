@@ -1,0 +1,80 @@
+[
+    {
+        "doctype": "Notification",
+        "name": "New Order Notification",
+        "subject": "New Craft Order #{{ order_name }}",
+        "message": "A new order has been placed by {{ customer_name }}.\n\nOrder ID: {{ order_name }}\nTotal Amount: {{ total_amount }}\n\nPlease process this order at your earliest convenience.",
+        "document_type": "Craft Order",
+        "event": "New",
+        "send_from_creator": 0,
+        "send_to": ["All CraftNest Administrator", "All CraftNest Artisan"],
+        "channel": "Email",
+        "is_standard": 1,
+        "module": "CraftNest Marketplace"
+    },
+    {
+        "doctype": "Notification",
+        "name": "Order Shipped Notification",
+        "subject": "Your Order #{{ order_name }} Has Been Shipped",
+        "message": "Great news! Your order has been shipped.\n\nOrder ID: {{ order_name }}\nTracking Number: {{ tracking_number }}\n\nYou can track your package using the tracking number above.",
+        "document_type": "Craft Order",
+        "event": "Custom",
+        "send_from_creator": 0,
+        "send_to": ["All CraftNest Customer"],
+        "channel": "Email",
+        "is_standard": 1,
+        "module": "CraftNest Marketplace"
+    },
+    {
+        "doctype": "Notification",
+        "name": "Low Stock Alert",
+        "subject": "Low Stock Alert for {{ product_name }}",
+        "message": "The following product is running low on stock:\n\nProduct: {{ product_name }}\nCurrent Stock: {{ stock_quantity }}\nLow Stock Threshold: {{ low_stock_threshold }}\n\nPlease update the stock or mark the product as out of stock.",
+        "document_type": "Craft Product",
+        "event": "Custom",
+        "send_from_creator": 0,
+        "send_to": ["All CraftNest Artisan"],
+        "channel": "Email",
+        "is_standard": 1,
+        "module": "CraftNest Marketplace"
+    },
+    {
+        "doctype": "Notification",
+        "name": "New Review Notification",
+        "subject": "New Review for {{ product_name }}",
+        "message": "A new review has been submitted for your product.\n\nProduct: {{ product_name }}\nRating: {{ rating }}/5\nReview: {{ review_text }}\n\nCustomer: {{ customer_name }}",
+        "document_type": "Product Review",
+        "event": "New",
+        "send_from_creator": 0,
+        "send_to": ["All CraftNest Artisan"],
+        "channel": "Email",
+        "is_standard": 1,
+        "module": "CraftNest Marketplace"
+    },
+    {
+        "doctype": "Notification",
+        "name": "Payment Received Notification",
+        "subject": "Payment Received for Order #{{ order_name }}",
+        "message": "Payment has been received for your order.\n\nOrder ID: {{ order_name }}\nAmount: {{ total_amount }}\nPayment Method: {{ payment_method }}\n\nYour order is now being processed.",
+        "document_type": "Payment Transaction",
+        "event": "New",
+        "send_from_creator": 0,
+        "send_to": ["All CraftNest Customer", "All CraftNest Artisan"],
+        "channel": "Email",
+        "is_standard": 1,
+        "module": "CraftNest Marketplace"
+    },
+    {
+        "doctype": "Notification",
+        "name": "Artisan Verification Status",
+        "subject": "Artisan Verification - {{ status }}",
+        "message": "Your artisan verification request has been {{ status }}.\n\n{% if status == 'Approved' %}\nCongratulations! You are now a verified artisan on CraftNest Marketplace.\n{% elif status == 'Rejected' %}\nUnfortunately, your verification request was not approved.\nReason: {{ rejection_reason }}\nPlease submit a new request with the correct documents.\n{% else %}\nYour verification is being reviewed. We will notify you once the review is complete.\n{% endif %}",
+        "document_type": "Artisan Verification",
+        "event": "Custom",
+        "send_from_creator": 0,
+        "send_to": ["All CraftNest Artisan"],
+        "channel": "Email",
+        "is_standard": 1,
+        "module": "CraftNest Marketplace"
+    }
+]

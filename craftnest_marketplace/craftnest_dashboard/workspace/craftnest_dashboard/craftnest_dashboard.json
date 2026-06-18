@@ -1,0 +1,97 @@
+{
+ "charts": [
+  {
+   "chart_name": "Sales Trend",
+   "label": "Sales Trend"
+  },
+  {
+   "chart_name": "Order Status Distribution",
+   "label": "Order Status"
+  },
+  {
+   "chart_name": "Top Products",
+   "label": "Top Products"
+  }
+ ],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"CraftNest Marketplace\",\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Products\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Orders\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Customers\",\"col\":3}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Sellers\",\"col\":3}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Sales Trend\",\"col\":6}},{\"type\":\"chart\",\"data\":{\"chart_name\":\"Order Status Distribution\",\"col\":6}},{\"type\":\"spacer\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Quick Access\",\"col\":12}},{\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Recent Orders\",\"col\":6}},{\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Low Stock Products\",\"col\":6}}]",
+ "creation": "2026-06-18 10:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "home",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "CraftNest Dashboard",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Sales Report",
+   "link_to": "Sales Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Product Performance",
+   "link_to": "Product Performance Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer Orders",
+   "link_to": "Customer Order Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Top Selling Products",
+   "link_to": "Top Selling Products",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CraftNest Dashboard",
+ "name": "CraftNest Dashboard",
+ "number_cards": [
+  {
+   "number_card_name": "Total Products"
+  },
+  {
+   "number_card_name": "Total Orders"
+  },
+  {
+   "number_card_name": "Total Customers"
+  },
+  {
+   "number_card_name": "Total Sellers"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [
+  {
+   "quick_list_name": "Recent Orders"
+  },
+  {
+   "quick_list_name": "Low Stock Products"
+  }
+ ],
+ "roles": [],
+ "sequence_id": 1.0,
+ "title": "CraftNest Dashboard"
+}

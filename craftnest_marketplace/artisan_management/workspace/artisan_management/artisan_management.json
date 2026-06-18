@@ -1,0 +1,58 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Artisan Management\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Quick Access\",\"col\":12}},{\"type\":\"link\",\"data\":{\"text\":\"Artisan Profiles\",\"link_to\":\"Artisan Profile\",\"link_type\":\"DocType\",\"col\":4}},{\"type\":\"link\",\"data\":{\"text\":\"Artisan Shops\",\"link_to\":\"Artisan Shop\",\"link_type\":\"DocType\",\"col\":4}},{\"type\":\"link\",\"data\":{\"text\":\"Verifications\",\"link_to\":\"Artisan Verification\",\"link_type\":\"DocType\",\"col\":4}}]",
+ "creation": "2026-06-18 10:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "octicon octicon-organization",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Artisan Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Artisan Profiles",
+   "link_to": "Artisan Profile",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Artisan Shops",
+   "link_to": "Artisan Shop",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Artisan Verifications",
+   "link_to": "Artisan Verification",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Artisan Management",
+ "name": "Artisan Management",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "CraftNest Administrator"
+  }
+ ],
+ "sequence_id": 2.0,
+ "title": "Artisan Management"
+}

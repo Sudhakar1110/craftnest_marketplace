@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top craftnest-navbar">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/craftnest_marketplace/images/logo.png" alt="CraftNest" height="40" class="d-inline-block align-top">
+            <span class="brand-text">CraftNest</span>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/products">Products</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-toggle="dropdown">
+                        Categories
+                    </a>
+                    <div class="dropdown-menu">
+                        {% for category in categories %}
+                        <a class="dropdown-item" href="/products?category={{ category.name }}">{{ category.category_name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+            </ul>
+            
+            <div class="navbar-nav">
+                <form class="search-form" action="/products" method="get">
+                    <input type="text" name="q" placeholder="Search products..." class="search-input">
+                    <button type="submit" class="search-btn">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </form>
+                
+                <a class="nav-icon-btn" href="/wishlist">
+                    <i class="fa fa-heart"></i>
+                    <span class="badge" id="wishlist-count">0</span>
+                </a>
+                
+                <a class="nav-icon-btn" href="/cart">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="badge" id="cart-count">{{ frappe.get_value("Site Config", "cart_count") or 0 }}</span>
+                </a>
+                
+                {% if frappe.session.user == "Guest" %}
+                <a class="btn btn-outline-primary btn-sm ml-2" href="/login">Login</a>
+                <a class="btn btn-primary btn-sm ml-2" href="/signup">Sign Up</a>
+                {% else %}
+                <div class="dropdown">
+                    <button class="btn btn-outline-primary btn-sm dropdown-toggle ml-2" type="button" id="userMenu" data-toggle="dropdown">
+                        <i class="fa fa-user"></i> {{ frappe.session.user }}
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="/my-account">My Account</a>
+                        <a class="dropdown-item" href="/my-account/orders">My Orders</a>
+                        <a class="dropdown-item" href="/wishlist">Wishlist</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/logout">Logout</a>
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>

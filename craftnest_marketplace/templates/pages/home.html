@@ -1,0 +1,214 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="craftnest-home">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Discover Unique Handcrafted Art</h1>
+                    <p class="hero-subtitle">Support local artisans and find one-of-a-kind pieces for your home and lifestyle</p>
+                    <div class="hero-actions">
+                        <a href="/products" class="btn btn-primary btn-lg">Shop Now</a>
+                        <a href="/artisans" class="btn btn-outline-primary btn-lg">Meet Artisans</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Artisans</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10,000+</span>
+                            <span class="stat-label">Products</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50,000+</span>
+                            <span class="stat-label">Happy Customers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image-wrapper">
+                        <img src="/assets/craftnest_marketplace/images/hero-craft.jpg" alt="Handcrafted Art" class="hero-image">
+                        <div class="hero-badge">
+                            <span class="badge-text">Handmade with Love</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section py-5">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Shop by Category</h2>
+                <p class="section-subtitle">Explore our curated collection of handcrafted categories</p>
+            </div>
+            <div class="row">
+                {% for category in categories %}
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <a href="/products?category={{ category.name }}" class="category-card">
+                        <div class="category-image">
+                            {% if category.category_image %}
+                            <img src="{{ category.category_image }}" alt="{{ category.category_name }}">
+                            {% else %}
+                            <div class="category-placeholder"></div>
+                            {% endif %}
+                            <div class="category-overlay">
+                                <h3 class="category-name">{{ category.category_name }}</h3>
+                                <span class="category-count">{{ category.product_count or 0 }} Products</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Featured Products</h2>
+                <p class="section-subtitle">Hand-picked favorites from our artisans</p>
+            </div>
+            <div class="row">
+                {% for product in featured_products %}
+                <div class="col-lg-3 col-md-6 mb-4">
+                    {% include "templates/includes/product_card.html" %}
+                </div>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-4">
+                <a href="/products" class="btn btn-outline-primary btn-lg">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="new-arrivals py-5">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">New Arrivals</h2>
+                <p class="section-subtitle">Fresh additions to our artisan collection</p>
+            </div>
+            <div class="row">
+                {% for product in new_arrivals %}
+                <div class="col-lg-3 col-md-6 mb-4">
+                    {% include "templates/includes/product_card.html" %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="best-sellers py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Best Sellers</h2>
+                <p class="section-subtitle">Most loved products by our customers</p>
+            </div>
+            <div class="row">
+                {% for product in best_sellers %}
+                <div class="col-lg-3 col-md-6 mb-4">
+                    {% include "templates/includes/product_card.html" %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose-us py-5">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Why Choose CraftNest</h2>
+                <p class="section-subtitle">What makes us different</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa fa-hand-paper-o"></i>
+                        </div>
+                        <h4>Handmade</h4>
+                        <p>Every product is handcrafted by skilled artisans with love and care</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa fa-truck"></i>
+                        </div>
+                        <h4>Free Shipping</h4>
+                        <p>Free shipping on all orders above ₹500</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa fa-refresh"></i>
+                        </div>
+                        <h4>Easy Returns</h4>
+                        <p>Hassle-free 7-day return policy</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fa fa-shield"></i>
+                        </div>
+                        <h4>Secure Payment</h4>
+                        <p>100% secure payment with multiple options</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    {% if testimonials %}
+    <section class="testimonials py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real reviews from real people</p>
+            </div>
+            <div class="row">
+                {% for testimonial in testimonials %}
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            {% for i in range(testimonial.rating) %}
+                            <i class="fa fa-star"></i>
+                            {% endfor %}
+                        </div>
+                        <p class="testimonial-text">"{{ testimonial.review_text[:150] }}..."</p>
+                        <div class="testimonial-author">
+                            <strong>{{ testimonial.customer_name }}</strong>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2>Are You an Artisan?</h2>
+                <p>Join our community of talented craftsmen and reach millions of customers</p>
+                <a href="/seller/register" class="btn btn-light btn-lg">Become a Seller</a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

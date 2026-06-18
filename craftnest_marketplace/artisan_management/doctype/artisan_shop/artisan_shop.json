@@ -1,0 +1,275 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:shop_name",
+ "creation": "2026-06-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "shop_name",
+  "artisan",
+  "slug",
+  "column_break_4",
+  "status",
+  "shop_banner",
+  "section_break_7",
+  "shop_description",
+  "about_shop",
+  "column_break_10",
+  "shop_logo",
+  "cover_image",
+  "section_break_13",
+  "shop_policies",
+  "return_policy",
+  "column_break_16",
+  "shipping_policy",
+  "section_break_19",
+  "total_products",
+  "total_sales",
+  "column_break_22",
+  "rating",
+  "total_reviews",
+  "section_break_25",
+  "facebook_url",
+  "instagram_url",
+  "column_break_28",
+  "twitter_url",
+  "pinterest_url",
+  "section_break_31",
+  "seo_title",
+  "seo_description",
+  "column_break_34",
+  "meta_keywords",
+  "published"
+ ],
+ "fields": [
+  {
+   "fieldname": "shop_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shop Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "artisan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Artisan",
+   "options": "Artisan Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "slug",
+   "fieldtype": "Data",
+   "label": "URL Slug",
+   "unique": 1,
+   "description": "URL-friendly name for the shop (e.g., my-artisan-shop)"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Draft\nActive\nInactive\nSuspended"
+  },
+  {
+   "fieldname": "shop_banner",
+   "fieldtype": "Attach Image",
+   "label": "Shop Banner"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "About Shop"
+  },
+  {
+   "fieldname": "shop_description",
+   "fieldtype": "Small Text",
+   "label": "Shop Tagline"
+  },
+  {
+   "fieldname": "about_shop",
+   "fieldtype": "Text Editor",
+   "label": "About Shop"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shop_logo",
+   "fieldtype": "Attach Image",
+   "label": "Shop Logo"
+  },
+  {
+   "fieldname": "cover_image",
+   "fieldtype": "Attach Image",
+   "label": "Cover Image"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break",
+   "label": "Policies"
+  },
+  {
+   "fieldname": "shop_policies",
+   "fieldtype": "Text Editor",
+   "label": "Shop Policies"
+  },
+  {
+   "fieldname": "return_policy",
+   "fieldtype": "Small Text",
+   "label": "Return Policy"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "shipping_policy",
+   "fieldtype": "Small Text",
+   "label": "Shipping Policy"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Statistics"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_products",
+   "fieldtype": "Int",
+   "label": "Total Products",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_sales",
+   "fieldtype": "Currency",
+   "label": "Total Sales",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "rating",
+   "fieldtype": "Float",
+   "label": "Average Rating",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_reviews",
+   "fieldtype": "Int",
+   "label": "Total Reviews",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break",
+   "label": "Social Media"
+  },
+  {
+   "fieldname": "facebook_url",
+   "fieldtype": "Data",
+   "label": "Facebook URL"
+  },
+  {
+   "fieldname": "instagram_url",
+   "fieldtype": "Data",
+   "label": "Instagram URL"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "twitter_url",
+   "fieldtype": "Data",
+   "label": "Twitter URL"
+  },
+  {
+   "fieldname": "pinterest_url",
+   "fieldtype": "Data",
+   "label": "Pinterest URL"
+  },
+  {
+   "fieldname": "section_break_31",
+   "fieldtype": "Section Break",
+   "label": "SEO"
+  },
+  {
+   "fieldname": "seo_title",
+   "fieldtype": "Data",
+   "label": "SEO Title"
+  },
+  {
+   "fieldname": "seo_description",
+   "fieldtype": "Small Text",
+   "label": "SEO Description"
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meta_keywords",
+   "fieldtype": "Small Text",
+   "label": "Meta Keywords"
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  }
+ ],
+ "image_field": "shop_logo",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Artisan Management",
+ "name": "Artisan Shop",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CraftNest Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "CraftNest Artisan",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "shop_name",
+ "track_changes": 1
+}

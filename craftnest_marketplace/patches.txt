@@ -1,0 +1,2 @@
+# Patches for CraftNest Marketplace
+# Add your database migrations and patches here

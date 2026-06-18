@@ -1,0 +1,6 @@
+CraftNest Dashboard
+Artisan Management
+Product Management
+Customer Management
+Order Management
+Payment Management

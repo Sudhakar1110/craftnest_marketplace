@@ -1,0 +1,22 @@
+{
+ "aggregate_function_based_on": "",
+ "color": "#F4A261",
+ "creation": "2026-06-18 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Artisan Profile",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[[\"Artisan Profile\",\"status\",\"=\",\"Active\",false]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "Total Sellers",
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "CraftNest Dashboard",
+ "name": "Total Sellers",
+ "owner": "Administrator",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Monthly"
+}

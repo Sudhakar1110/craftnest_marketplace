@@ -1,0 +1,237 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-06-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "artisan",
+  "workflow_state",
+  "column_break_3",
+  "verification_type",
+  "submission_date",
+  "section_break_5",
+  "identity_verification",
+  "id_document",
+  "column_break_8",
+  "id_document_number",
+  "section_break_10",
+  "address_verification",
+  "address_proof",
+  "column_break_13",
+  "address_proof_number",
+  "section_break_15",
+  "business_verification",
+  "business_license",
+  "column_break_18",
+  "tax_certificate",
+  "section_break_20",
+  "additional_documents",
+  "document_list",
+  "section_break_23",
+  "verification_notes",
+  "reviewed_by",
+  "column_break_26",
+  "review_date",
+  "rejection_reason"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "AV-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "artisan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Artisan",
+   "options": "Artisan Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Link",
+   "label": "Status",
+   "options": "Workflow State",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Complete",
+   "fieldname": "verification_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Verification Type",
+   "options": "Basic\nComplete\nEnterprise"
+  },
+  {
+   "default": "Today",
+   "fieldname": "submission_date",
+   "fieldtype": "Date",
+   "label": "Submission Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break",
+   "label": "Identity Verification"
+  },
+  {
+   "fieldname": "identity_verification",
+   "fieldtype": "Section Break",
+   "label": "Identity Verification"
+  },
+  {
+   "fieldname": "id_document",
+   "fieldtype": "Attach",
+   "label": "ID Document (Aadhar/Passport)"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "id_document_number",
+   "fieldtype": "Data",
+   "label": "ID Document Number"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Address Verification"
+  },
+  {
+   "fieldname": "address_verification",
+   "fieldtype": "Section Break",
+   "label": "Address Verification"
+  },
+  {
+   "fieldname": "address_proof",
+   "fieldtype": "Attach",
+   "label": "Address Proof"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "address_proof_number",
+   "fieldtype": "Data",
+   "label": "Address Proof Number"
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "Business Verification"
+  },
+  {
+   "fieldname": "business_verification",
+   "fieldtype": "Section Break",
+   "label": "Business Verification"
+  },
+  {
+   "fieldname": "business_license",
+   "fieldtype": "Attach",
+   "label": "Business License"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax_certificate",
+   "fieldtype": "Attach",
+   "label": "Tax Certificate (GST)"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break",
+   "label": "Additional Documents"
+  },
+  {
+   "fieldname": "additional_documents",
+   "fieldtype": "Section Break",
+   "label": "Additional Documents"
+  },
+  {
+   "fieldname": "document_list",
+   "fieldtype": "Table",
+   "label": "Document List",
+   "options": "Artisan Document"
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break",
+   "label": "Review Information"
+  },
+  {
+   "fieldname": "verification_notes",
+   "fieldtype": "Text Editor",
+   "label": "Verification Notes"
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Reviewed By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "review_date",
+   "fieldtype": "Datetime",
+   "label": "Review Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "Rejection Reason"
+  }
+ ],
+ "links": [],
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Artisan Management",
+ "name": "Artisan Verification",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CraftNest Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "CraftNest Artisan",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

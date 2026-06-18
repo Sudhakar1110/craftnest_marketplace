@@ -1,0 +1,46 @@
+<div class="product-card">
+    <a href="{{ (product.route or '/product/' + product.name) if product else '/product/' + name }}">
+        <div class="product-image">
+            {% if product.main_image %}
+            <img src="{{ product.main_image }}" alt="{{ product.product_name }}">
+            {% else %}
+            <div class="product-placeholder">
+                <i class="fa fa-image"></i>
+            </div>
+            {% endif %}
+            {% if product.sale_price and product.price > product.sale_price %}
+            <span class="sale-badge">Sale</span>
+            {% endif %}
+            <div class="product-actions">
+                <button class="btn-action" onclick="addToWishlist('{{ product.name }}', event)">
+                    <i class="fa fa-heart"></i>
+                </button>
+                <button class="btn-action" onclick="quickView('{{ product.name }}', event)">
+                    <i class="fa fa-eye"></i>
+                </button>
+                <button class="btn-action" onclick="addToCart('{{ product.name }}', event)">
+                    <i class="fa fa-shopping-cart"></i>
+                </button>
+            </div>
+        </div>
+        <div class="product-info">
+            <p class="product-category">{{ product.category }}</p>
+            <h3 class="product-name">{{ product.product_name }}</h3>
+            <div class="product-rating">
+                <i class="fa fa-star"></i>
+                <span>{{ "%.1f"|format(product.average_rating or 0) }}</span>
+            </div>
+            <div class="product-price">
+                {% if product.sale_price %}
+                <span class="original-price">₹{{ product.price }}</span>
+                <span class="sale-price">₹{{ product.sale_price }}</span>
+                {% else %}
+                <span class="price">₹{{ product.price }}</span>
+                {% endif %}
+            </div>
+            <span class="stock-status {{ product.stock_status.lower().replace(' ', '-') if product.stock_status else '' }}">
+                {{ product.stock_status or 'In Stock' }}
+            </span>
+        </div>
+    </a>
+</div>

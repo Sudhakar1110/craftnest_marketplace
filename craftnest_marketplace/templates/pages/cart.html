@@ -1,0 +1,116 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="craftnest-cart-page">
+    <div class="container">
+        <h1 class="page-title">Shopping Cart</h1>
+
+        {% if cart_items %}
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="cart-items">
+                    {% for item in cart_items %}
+                    <div class="cart-item">
+                        <div class="item-image">
+                            {% if item.product.main_image %}
+                            <img src="{{ item.product.main_image }}" alt="{{ item.product.product_name }}">
+                            {% else %}
+                            <div class="image-placeholder">
+                                <i class="fa fa-image"></i>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="item-details">
+                            <h3>
+                                <a href="{{ item.product.route or '/product/' + item.product.name }}">
+                                    {{ item.product.product_name }}
+                                </a>
+                            </h3>
+                            <p class="item-artisan">by {{ item.product.artisan }}</p>
+                            <div class="item-price">
+                                {% if item.product.sale_price %}
+                                <span class="original">₹{{ item.product.price }}</span>
+                                <span class="current">₹{{ item.product.sale_price }}</span>
+                                {% else %}
+                                <span class="current">₹{{ item.product.price }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="item-quantity">
+                            <button onclick="updateCartItem('{{ item.product.name }}', -1)">-</button>
+                            <input type="number" value="{{ item.qty }}" min="1" onchange="updateCartItem('{{ item.product.name }}', 0, this.value)">
+                            <button onclick="updateCartItem('{{ item.product.name }}', 1)">+</button>
+                        </div>
+                        <div class="item-total">
+                            <span>₹{{ "%.2f"|format(item.total) }}</span>
+                        </div>
+                        <div class="item-actions">
+                            <button onclick="moveToWishlist('{{ item.product.name }}')" class="btn-icon">
+                                <i class="fa fa-heart"></i>
+                            </button>
+                            <button onclick="removeFromCart('{{ item.product.name }}')" class="btn-icon">
+                                <i class="fa fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="cart-actions">
+                    <a href="/products" class="btn btn-outline-primary">
+                        <i class="fa fa-arrow-left"></i> Continue Shopping
+                    </a>
+                    <button onclick="clearCart()" class="btn btn-outline-danger">
+                        Clear Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal ({{ cart_items|length }} items)</span>
+                        <span>₹{{ "%.2f"|format(subtotal) }}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>{% if shipping == 0 %}Free{% else %}₹{{ shipping }}{% endif %}</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (18% GST)</span>
+                        <span>₹{{ "%.2f"|format(tax) }}</span>
+                    </div>
+                    <div class="summary-divider"></div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span>₹{{ "%.2f"|format(total) }}</span>
+                    </div>
+                    <a href="/checkout" class="btn btn-primary btn-lg btn-block">
+                        Proceed to Checkout
+                    </a>
+                    <div class="secure-badge">
+                        <i class="fa fa-lock"></i> Secure checkout
+                    </div>
+                </div>
+
+                <div class="promo-code">
+                    <h4>Have a Promo Code?</h4>
+                    <div class="promo-form">
+                        <input type="text" placeholder="Enter promo code">
+                        <button class="btn btn-outline-secondary">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="empty-cart text-center">
+            <i class="fa fa-shopping-cart"></i>
+            <h2>Your cart is empty</h2>
+            <p>Looks like you haven't added any items to your cart yet.</p>
+            <a href="/products" class="btn btn-primary btn-lg">Start Shopping</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

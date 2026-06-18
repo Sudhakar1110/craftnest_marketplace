@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include craftnest_marketplace *.css
+recursive-include craftnest_marketplace *.csv
+recursive-include craftnest_marketplace *.html
+recursive-include craftnest_marketplace *.ico
+recursive-include craftnest_marketplace *.js
+recursive-include craftnest_marketplace *.json
+recursive-include craftnest_marketplace *.md
+recursive-include craftnest_marketplace *.png
+recursive-include craftnest_marketplace *.py
+recursive-include craftnest_marketplace *.svg
+recursive-include craftnest_marketplace *.txt
+recursive-exclude craftnest_marketplace *.pyc

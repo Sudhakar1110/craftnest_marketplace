@@ -1,0 +1,187 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-06-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "product",
+  "customer",
+  "column_break_3",
+  "customer_name",
+  "rating",
+  "review_date",
+  "section_break_6",
+  "review_title",
+  "review_text",
+  "column_break_9",
+  "images",
+  "section_break_12",
+  "status",
+  "verified_purchase",
+  "column_break_15",
+  "helpful_count",
+  "artisan_response",
+  "section_break_18",
+  "response_text",
+  "response_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "REV-.YYYY.-.#####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "product",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Product",
+   "options": "Craft Product",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "in_list_view": 1,
+   "label": "Rating",
+   "reqd": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "review_date",
+   "fieldtype": "Date",
+   "label": "Review Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break",
+   "label": "Review Content"
+  },
+  {
+   "fieldname": "review_title",
+   "fieldtype": "Data",
+   "label": "Review Title",
+   "reqd": 1
+  },
+  {
+   "fieldname": "review_text",
+   "fieldtype": "Text Editor",
+   "label": "Review",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "images",
+   "fieldtype": "Table",
+   "label": "Review Images",
+   "options": "Review Image"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break",
+   "label": "Review Status"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "Pending\nApproved\nRejected\nSpam"
+  },
+  {
+   "default": "0",
+   "fieldname": "verified_purchase",
+   "fieldtype": "Check",
+   "label": "Verified Purchase"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "helpful_count",
+   "fieldtype": "Int",
+   "label": "Helpful Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "artisan_response",
+   "fieldtype": "Section Break",
+   "label": "Artisan Response"
+  },
+  {
+   "fieldname": "response_text",
+   "fieldtype": "Text Editor",
+   "label": "Response"
+  },
+  {
+   "fieldname": "response_date",
+   "fieldtype": "Datetime",
+   "label": "Response Date",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Product Management",
+ "name": "Product Review",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CraftNest Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "CraftNest Customer",
+   "write": 1
+  }
+ ],
+ "sort_field": "review_date",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

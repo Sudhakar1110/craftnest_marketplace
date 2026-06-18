@@ -1,0 +1,88 @@
+[
+    {
+        "doctype": "Customer",
+        "fieldname": "craftnest_customer_id",
+        "fieldtype": "Data",
+        "label": "CraftNest Customer ID",
+        "insert_after": "customer_name",
+        "read_only": 1,
+        "hidden": 1
+    },
+    {
+        "doctype": "Customer",
+        "fieldname": "loyalty_points",
+        "fieldtype": "Int",
+        "label": "Loyalty Points",
+        "default": "0",
+        "insert_after": "craftnest_customer_id"
+    },
+    {
+        "doctype": "Customer",
+        "fieldname": "preferred_categories",
+        "fieldtype": "Table MultiSelect",
+        "label": "Preferred Categories",
+        "options": "Product Category",
+        "insert_after": "loyalty_points"
+    },
+    {
+        "doctype": "Item",
+        "fieldname": "is_craft_product",
+        "fieldtype": "Check",
+        "label": "Is Craft Product",
+        "insert_after": "is_stock_item",
+        "default": "0"
+    },
+    {
+        "doctype": "Item",
+        "fieldname": "craft_artisan",
+        "fieldtype": "Link",
+        "label": "Artisan",
+        "options": "Artisan Profile",
+        "insert_after": "is_craft_product"
+    },
+    {
+        "doctype": "Item",
+        "fieldname": "craft_material",
+        "fieldtype": "Data",
+        "label": "Material",
+        "insert_after": "craft_artisan"
+    },
+    {
+        "doctype": "Item Group",
+        "fieldname": "craftnest_category_type",
+        "fieldtype": "Select",
+        "label": "Category Type",
+        "options": "Handmade\nVintage\nSupplies\nDigital",
+        "insert_after": "parent_item_group"
+    },
+    {
+        "doctype": "Sales Order",
+        "fieldname": "craft_order",
+        "fieldtype": "Link",
+        "label": "Craft Order",
+        "options": "Craft Order",
+        "insert_after": "po_no"
+    },
+    {
+        "doctype": "Address",
+        "fieldname": "address_type",
+        "fieldtype": "Select",
+        "label": "Address Type",
+        "options": "Billing\nShipping\nBoth",
+        "insert_after": "address_type2"
+    },
+    {
+        "doctype": "Address",
+        "fieldname": "is_default_shipping",
+        "fieldtype": "Check",
+        "label": "Default Shipping Address",
+        "insert_after": "address_type"
+    },
+    {
+        "doctype": "Address",
+        "fieldname": "delivery_instructions",
+        "fieldtype": "Small Text",
+        "label": "Delivery Instructions",
+        "insert_after": "is_default_shipping"
+    }
+]

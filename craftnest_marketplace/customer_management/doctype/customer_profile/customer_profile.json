@@ -1,0 +1,195 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:customer_code",
+ "creation": "2026-06-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_code",
+  "customer_name",
+  "user",
+  "email",
+  "phone",
+  "column_break_5",
+  "profile_image",
+  "member_since",
+  "loyalty_tier",
+  "section_break_8",
+  "preferences",
+  "preferred_categories",
+  "column_break_11",
+  "newsletter_subscribed",
+  "sms_notifications",
+  "section_break_14",
+  "total_orders",
+  "total_spent",
+  "column_break_17",
+  "average_order_value",
+  "loyalty_points"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_code",
+   "fieldtype": "Data",
+   "label": "Customer Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Customer Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "profile_image",
+   "fieldtype": "Attach Image",
+   "label": "Profile Image"
+  },
+  {
+   "default": "Today",
+   "fieldname": "member_since",
+   "fieldtype": "Date",
+   "label": "Member Since",
+   "read_only": 1
+  },
+  {
+   "default": "Bronze",
+   "fieldname": "loyalty_tier",
+   "fieldtype": "Select",
+   "label": "Loyalty Tier",
+   "options": "Bronze\nSilver\nGold\nPlatinum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Preferences"
+  },
+  {
+   "fieldname": "preferences",
+   "fieldtype": "Section Break",
+   "label": "Preferences"
+  },
+  {
+   "fieldname": "preferred_categories",
+   "fieldtype": "Table MultiSelect",
+   "label": "Preferred Categories",
+   "options": "Product Category"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "newsletter_subscribed",
+   "fieldtype": "Check",
+   "label": "Newsletter Subscribed"
+  },
+  {
+   "default": "1",
+   "fieldname": "sms_notifications",
+   "fieldtype": "Check",
+   "label": "SMS Notifications"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Statistics"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_orders",
+   "fieldtype": "Int",
+   "label": "Total Orders",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_spent",
+   "fieldtype": "Currency",
+   "label": "Total Spent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "average_order_value",
+   "fieldtype": "Currency",
+   "label": "Average Order Value",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "loyalty_points",
+   "fieldtype": "Int",
+   "label": "Loyalty Points",
+   "read_only": 1
+  }
+ ],
+ "image_field": "profile_image",
+ "links": [],
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Customer Management",
+ "name": "Customer Profile",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CraftNest Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "CraftNest Customer",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "customer_name",
+ "track_changes": 1
+}

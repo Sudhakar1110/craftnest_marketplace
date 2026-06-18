@@ -1,0 +1,183 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="craftnest-products-page">
+    <div class="container">
+        <!-- Breadcrumb -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">Products</li>
+                {% if category %}
+                <li class="breadcrumb-item active">{{ category.category_name }}</li>
+                {% endif %}
+            </ol>
+        </nav>
+
+        <div class="row">
+            <!-- Sidebar Filters -->
+            <div class="col-lg-3">
+                <div class="filters-sidebar">
+                    <h4>Filters</h4>
+                    
+                    <!-- Categories -->
+                    <div class="filter-group">
+                        <h5>Categories</h5>
+                        <div class="filter-options">
+                            {% for cat in categories %}
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="category" value="{{ cat.name }}" {% if category and category.name == cat.name %}checked{% endif %}>
+                                {{ cat.category_name }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Price Range -->
+                    <div class="filter-group">
+                        <h5>Price Range</h5>
+                        <div class="price-range">
+                            <input type="number" name="min_price" placeholder="Min" class="form-control" value="{{ min_price }}">
+                            <span>to</span>
+                            <input type="number" name="max_price" placeholder="Max" class="form-control" value="{{ max_price }}">
+                        </div>
+                    </div>
+
+                    <!-- Artisan -->
+                    <div class="filter-group">
+                        <h5>Artisans</h5>
+                        <div class="filter-options">
+                            {% for art in artisans %}
+                            <label class="filter-checkbox">
+                                <input type="checkbox" name="artisan" value="{{ art.name }}">
+                                {{ art.artisan_name }}
+                            </label>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary btn-block" onclick="applyFilters()">Apply Filters</button>
+                    <button class="btn btn-outline-secondary btn-block" onclick="clearFilters()">Clear All</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="col-lg-9">
+                <!-- Sort Bar -->
+                <div class="products-header">
+                    <div class="results-count">
+                        <p>{{ products|length }} Products Found</p>
+                    </div>
+                    <div class="sort-options">
+                        <label>Sort by:</label>
+                        <select name="sort" class="form-control" onchange="applyFilters()">
+                            <option value="">Newest</option>
+                            <option value="price_low" {% if sort_by == 'price_low' %}selected{% endif %}>Price: Low to High</option>
+                            <option value="price_high" {% if sort_by == 'price_high' %}selected{% endif %}>Price: High to Low</option>
+                            <option value="rating" {% if sort_by == 'rating' %}selected{% endif %}>Rating</option>
+                            <option value="popular" {% if sort_by == 'popular' %}selected{% endif %}>Popularity</option>
+                        </select>
+                    </div>
+                </div>
+
+                {% if search %}
+                <div class="search-results">
+                    <p>Showing results for: <strong>"{{ search }}"</strong></p>
+                </div>
+                {% endif %}
+
+                <!-- Products Grid -->
+                <div class="products-grid">
+                    {% for product in products %}
+                    <div class="product-card">
+                        <a href="{{ product.route or '/product/' + product.name }}">
+                            <div class="product-image">
+                                {% if product.main_image %}
+                                <img src="{{ product.main_image }}" alt="{{ product.product_name }}">
+                                {% else %}
+                                <div class="product-placeholder">
+                                    <i class="fa fa-image"></i>
+                                </div>
+                                {% endif %}
+                                {% if product.sale_price %}
+                                <span class="sale-badge">Sale</span>
+                                {% endif %}
+                                <div class="product-actions">
+                                    <button class="btn-action" onclick="addToWishlist('{{ product.name }}', event)">
+                                        <i class="fa fa-heart"></i>
+                                    </button>
+                                    <button class="btn-action" onclick="quickView('{{ product.name }}', event)">
+                                        <i class="fa fa-eye"></i>
+                                    </button>
+                                    <button class="btn-action" onclick="addToCart('{{ product.name }}', event)">
+                                        <i class="fa fa-shopping-cart"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">{{ product.category }}</p>
+                                <h3 class="product-name">{{ product.product_name }}</h3>
+                                <div class="product-rating">
+                                    <i class="fa fa-star"></i>
+                                    <span>{{ "%.1f"|format(product.average_rating or 0) }}</span>
+                                </div>
+                                <div class="product-price">
+                                    {% if product.sale_price %}
+                                    <span class="original-price">₹{{ product.price }}</span>
+                                    <span class="sale-price">₹{{ product.sale_price }}</span>
+                                    {% else %}
+                                    <span class="price">₹{{ product.price }}</span>
+                                    {% endif %}
+                                </div>
+                                <span class="stock-status {{ product.stock_status.lower().replace(' ', '-') }}">{{ product.stock_status }}</span>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                {% if not products %}
+                <div class="no-products text-center">
+                    <i class="fa fa-search"></i>
+                    <h3>No products found</h3>
+                    <p>Try adjusting your filters or search terms</p>
+                    <a href="/products" class="btn btn-primary">View All Products</a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function applyFilters() {
+    var params = new URLSearchParams(window.location.search);
+    var form = document.querySelector('.filters-sidebar');
+    
+    // Categories
+    var categories = [];
+    form.querySelectorAll('input[name="category"]:checked').forEach(cb => categories.push(cb.value));
+    if (categories.length) params.set('category', categories[0]);
+    else params.delete('category');
+    
+    // Price
+    var minPrice = form.querySelector('input[name="min_price"]').value;
+    var maxPrice = form.querySelector('input[name="max_price"]').value;
+    if (minPrice) params.set('min_price', minPrice);
+    else params.delete('min_price');
+    if (maxPrice) params.set('max_price', maxPrice);
+    else params.delete('max_price');
+    
+    // Sort
+    var sort = form.querySelector('select[name="sort"]')?.value || document.querySelector('select[name="sort"]')?.value;
+    if (sort) params.set('sort', sort);
+    else params.delete('sort');
+    
+    window.location.href = '/products?' + params.toString();
+}
+
+function clearFilters() {
+    window.location.href = '/products';
+}
+</script>
+{% endblock %}

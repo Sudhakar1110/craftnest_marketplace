@@ -1,0 +1,133 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+<div class="craftnest-shop-page">
+    <div class="container">
+        <!-- Shop Banner -->
+        <div class="shop-banner">
+            {% if shop.shop_banner %}
+            <img src="{{ shop.shop_banner }}" alt="{{ shop.shop_name }}" class="banner-image">
+            {% else %}
+            <div class="banner-placeholder"></div>
+            {% endif %}
+            <div class="shop-overlay">
+                <div class="shop-logo">
+                    {% if shop.shop_logo %}
+                    <img src="{{ shop.shop_logo }}" alt="{{ shop.shop_name }}">
+                    {% else %}
+                    <div class="logo-placeholder">
+                        <i class="fa fa-store"></i>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="shop-info">
+                    <h1>{{ shop.shop_name }}</h1>
+                    {% if artisan %}
+                    <p class="artisan-name">by {{ artisan.artisan_name }}</p>
+                    <div class="artisan-rating">
+                        <i class="fa fa-star"></i>
+                        <span>{{ "%.1f"|format(artisan.rating or 0) }}</span>
+                    </div>
+                    {% endif %}
+                    {% if shop.location %}
+                    <p class="shop-location"><i class="fa fa-map-marker"></i> {{ shop.location }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Shop Details -->
+        <div class="row mt-4">
+            <div class="col-lg-8">
+                {% if shop.shop_description %}
+                <div class="shop-description">
+                    <h3>About the Shop</h3>
+                    <p>{{ shop.shop_description }}</p>
+                </div>
+                {% endif %}
+
+                {% if artisan and artisan.bio %}
+                <div class="artisan-bio">
+                    <h3>About the Artisan</h3>
+                    <p>{{ artisan.bio }}</p>
+                    <div class="artisan-specialties">
+                        <strong>Specialties:</strong> {{ artisan.specialization }}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-lg-4">
+                <div class="shop-stats">
+                    <div class="stat-card">
+                        <span class="stat-value">{{ products|length }}</span>
+                        <span class="stat-label">Products</span>
+                    </div>
+                    {% if artisan %}
+                    <div class="stat-card">
+                        <span class="stat-value">{{ artisan.total_sales or 0 }}</span>
+                        <span class="stat-label">Sales</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-value">{{ "%.1f"|format(artisan.rating or 0) }}</span>
+                        <span class="stat-label">Rating</span>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Section -->
+        <section class="shop-products mt-5">
+            <h3>Products from this Shop</h3>
+            <div class="products-grid">
+                {% for product in products %}
+                <div class="product-card">
+                    <a href="{{ product.route or '/product/' + product.name }}">
+                        <div class="product-image">
+                            {% if product.main_image %}
+                            <img src="{{ product.main_image }}" alt="{{ product.product_name }}">
+                            {% else %}
+                            <div class="product-placeholder">
+                                <i class="fa fa-image"></i>
+                            </div>
+                            {% endif %}
+                            <div class="product-actions">
+                                <button class="btn-action" onclick="addToWishlist('{{ product.name }}', event)">
+                                    <i class="fa fa-heart"></i>
+                                </button>
+                                <button class="btn-action" onclick="addToCart('{{ product.name }}', event)">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">{{ product.product_name }}</h3>
+                            <div class="product-rating">
+                                <i class="fa fa-star"></i>
+                                <span>{{ "%.1f"|format(product.average_rating or 0) }}</span>
+                            </div>
+                            <div class="product-price">
+                                {% if product.sale_price %}
+                                <span class="original-price">₹{{ product.price }}</span>
+                                <span class="sale-price">₹{{ product.sale_price }}</span>
+                                {% else %}
+                                <span class="price">₹{{ product.price }}</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+            {% if not products %}
+            <div class="no-products text-center">
+                <i class="fa fa-box-open"></i>
+                <h3>No products yet</h3>
+                <p>This shop hasn't listed any products yet.</p>
+            </div>
+            {% endif %}
+        </section>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,385 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-06-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "product_name",
+  "artisan",
+  "category",
+  "column_break_5",
+  "sku",
+  "item_code",
+  "status",
+  "featured",
+  "section_break_10",
+  "description",
+  "specifications",
+  "column_break_13",
+  "main_image",
+  "image_gallery",
+  "section_break_16",
+  "price",
+  "sale_price",
+  "discount_percentage",
+  "column_break_20",
+  "stock_quantity",
+  "low_stock_threshold",
+  "stock_status",
+  "section_break_24",
+  "length",
+  "width",
+  "height",
+  "weight",
+  "column_break_29",
+  "material",
+  "colors_available",
+  "section_break_32",
+  "processing_time_days",
+  "shipping_available",
+  "free_shipping",
+  "column_break_36",
+  "return_policy",
+  "care_instructions",
+  "section_break_39",
+  "total_views",
+  "total_sales",
+  "column_break_42",
+  "average_rating",
+  "total_reviews",
+  "section_break_45",
+  "route",
+  "published"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "CNP-.YYYY.-.####",
+   "reqd": 1
+  },
+  {
+   "fieldname": "product_name",
+   "fieldtype": "Data",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "label": "Product Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "artisan",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Artisan",
+   "options": "Artisan Profile",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "Product Category",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "sku",
+   "fieldtype": "Data",
+   "label": "SKU",
+   "unique": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "ERPNext Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "default": "Draft",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Draft\nPublished\nOut of Stock\nDiscontinued",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "featured",
+   "fieldtype": "Check",
+   "label": "Featured Product"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break",
+   "label": "Product Details"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "specifications",
+   "fieldtype": "Small Text",
+   "label": "Specifications"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "main_image",
+   "fieldtype": "Attach Image",
+   "label": "Main Image"
+  },
+  {
+   "fieldname": "image_gallery",
+   "fieldtype": "Table",
+   "label": "Image Gallery",
+   "options": "Product Gallery"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Pricing"
+  },
+  {
+   "fieldname": "price",
+   "fieldtype": "Currency",
+   "label": "Regular Price",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sale_price",
+   "fieldtype": "Currency",
+   "label": "Sale Price"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.sale_price",
+   "fieldname": "discount_percentage",
+   "fieldtype": "Percent",
+   "label": "Discount %",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "stock_quantity",
+   "fieldtype": "Int",
+   "label": "Stock Quantity"
+  },
+  {
+   "default": "5",
+   "fieldname": "low_stock_threshold",
+   "fieldtype": "Int",
+   "label": "Low Stock Alert"
+  },
+  {
+   "default": "In Stock",
+   "fieldname": "stock_status",
+   "fieldtype": "Select",
+   "label": "Stock Status",
+   "options": "In Stock\nLow Stock\nOut of Stock",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break",
+   "label": "Dimensions & Attributes"
+  },
+  {
+   "fieldname": "length",
+   "fieldtype": "Float",
+   "label": "Length (cm)"
+  },
+  {
+   "fieldname": "width",
+   "fieldtype": "Float",
+   "label": "Width (cm)"
+  },
+  {
+   "fieldname": "height",
+   "fieldtype": "Float",
+   "label": "Height (cm)"
+  },
+  {
+   "fieldname": "weight",
+   "fieldtype": "Float",
+   "label": "Weight (kg)"
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "material",
+   "fieldtype": "Data",
+   "label": "Material"
+  },
+  {
+   "fieldname": "colors_available",
+   "fieldtype": "Small Text",
+   "label": "Colors Available"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_32",
+   "fieldtype": "Section Break",
+   "label": "Shipping & Returns"
+  },
+  {
+   "default": "7",
+   "fieldname": "processing_time_days",
+   "fieldtype": "Int",
+   "label": "Processing Time (Days)"
+  },
+  {
+   "default": "1",
+   "fieldname": "shipping_available",
+   "fieldtype": "Check",
+   "label": "Shipping Available"
+  },
+  {
+   "default": "0",
+   "fieldname": "free_shipping",
+   "fieldtype": "Check",
+   "label": "Free Shipping"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "return_policy",
+   "fieldtype": "Small Text",
+   "label": "Return Policy"
+  },
+  {
+   "fieldname": "care_instructions",
+   "fieldtype": "Small Text",
+   "label": "Care Instructions"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_39",
+   "fieldtype": "Section Break",
+   "label": "Statistics"
+  },
+  {
+   "default": "0",
+   "fieldname": "total_views",
+   "fieldtype": "Int",
+   "label": "Total Views",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_sales",
+   "fieldtype": "Int",
+   "label": "Total Sales",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_42",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "average_rating",
+   "fieldtype": "Float",
+   "label": "Average Rating",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_reviews",
+   "fieldtype": "Int",
+   "label": "Total Reviews",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_45",
+   "fieldtype": "Section Break",
+   "label": "Website"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "label": "Route",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published on Website"
+  }
+ ],
+ "has_web_view": 1,
+ "image_field": "main_image",
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Product Management",
+ "name": "Craft Product",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CraftNest Administrator",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "CraftNest Artisan",
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "CraftNest Customer"
+  }
+ ],
+ "route": "products",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "product_name",
+ "track_changes": 1
+}

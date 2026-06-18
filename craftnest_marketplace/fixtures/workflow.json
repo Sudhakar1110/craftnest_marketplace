@@ -1,0 +1,234 @@
+[
+    {
+        "doctype": "Workflow",
+        "workflow_name": "Artisan Verification Workflow",
+        "document_type": "Artisan Verification",
+        "is_active": 1,
+        "workflow_state_field": "workflow_state",
+        "states": [
+            {
+                "state": "Draft",
+                "style": "Warning",
+                "doc_status": 0,
+                "allow_edit": "All"
+            },
+            {
+                "state": "Pending Review",
+                "style": "Primary",
+                "doc_status": 0,
+                "allow_edit": "CraftNest Administrator"
+            },
+            {
+                "state": "Documents Verified",
+                "style": "Info",
+                "doc_status": 0,
+                "allow_edit": "CraftNest Administrator"
+            },
+            {
+                "state": "Approved",
+                "style": "Success",
+                "doc_status": 1,
+                "allow_edit": "CraftNest Administrator"
+            },
+            {
+                "state": "Rejected",
+                "style": "Danger",
+                "doc_status": 0,
+                "allow_edit": "CraftNest Administrator"
+            }
+        ],
+        "transitions": [
+            {
+                "state": "Draft",
+                "action": "Submit for Review",
+                "next_state": "Pending Review",
+                "allowed": "CraftNest Artisan",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Pending Review",
+                "action": "Verify Documents",
+                "next_state": "Documents Verified",
+                "allowed": "CraftNest Administrator",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Documents Verified",
+                "action": "Approve",
+                "next_state": "Approved",
+                "allowed": "CraftNest Administrator",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Pending Review",
+                "action": "Reject",
+                "next_state": "Rejected",
+                "allowed": "CraftNest Administrator",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Rejected",
+                "action": "Resubmit",
+                "next_state": "Draft",
+                "allowed": "CraftNest Artisan",
+                "allow_self_approval": 1
+            }
+        ]
+    },
+    {
+        "workflow_name": "Product Approval Workflow",
+        "document_type": "Craft Product",
+        "is_active": 1,
+        "workflow_state_field": "workflow_state",
+        "states": [
+            {
+                "state": "Draft",
+                "style": "Warning",
+                "doc_status": 0,
+                "allow_edit": "All"
+            },
+            {
+                "state": "Pending Approval",
+                "style": "Primary",
+                "doc_status": 0,
+                "allow_edit": "CraftNest Artisan"
+            },
+            {
+                "state": "Approved",
+                "style": "Success",
+                "doc_status": 1,
+                "allow_edit": "CraftNest Administrator"
+            },
+            {
+                "state": "Rejected",
+                "style": "Danger",
+                "doc_status": 0,
+                "allow_edit": "CraftNest Administrator"
+            }
+        ],
+        "transitions": [
+            {
+                "state": "Draft",
+                "action": "Submit for Approval",
+                "next_state": "Pending Approval",
+                "allowed": "CraftNest Artisan",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Pending Approval",
+                "action": "Approve",
+                "next_state": "Approved",
+                "allowed": "CraftNest Administrator",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Pending Approval",
+                "action": "Reject",
+                "next_state": "Rejected",
+                "allowed": "CraftNest Administrator",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Rejected",
+                "action": "Resubmit",
+                "next_state": "Draft",
+                "allowed": "CraftNest Artisan",
+                "allow_self_approval": 1
+            }
+        ]
+    },
+    {
+        "workflow_name": "Order Processing Workflow",
+        "document_type": "Craft Order",
+        "is_active": 1,
+        "workflow_state_field": "workflow_state",
+        "states": [
+            {
+                "state": "Draft",
+                "style": "Warning",
+                "doc_status": 0,
+                "allow_edit": "All"
+            },
+            {
+                "state": "Pending Payment",
+                "style": "Primary",
+                "doc_status": 0,
+                "allow_edit": "All"
+            },
+            {
+                "state": "Payment Received",
+                "style": "Info",
+                "doc_status": 0,
+                "allow_edit": "CraftNest Administrator"
+            },
+            {
+                "state": "Processing",
+                "style": "Info",
+                "doc_status": 0,
+                "allow_edit": "CraftNest Artisan"
+            },
+            {
+                "state": "Shipped",
+                "style": "Success",
+                "doc_status": 0,
+                "allow_edit": "CraftNest Delivery Staff"
+            },
+            {
+                "state": "Delivered",
+                "style": "Success",
+                "doc_status": 1,
+                "allow_edit": "All"
+            },
+            {
+                "state": "Cancelled",
+                "style": "Danger",
+                "doc_status": 0,
+                "allow_edit": "CraftNest Administrator"
+            }
+        ],
+        "transitions": [
+            {
+                "state": "Draft",
+                "action": "Place Order",
+                "next_state": "Pending Payment",
+                "allowed": "CraftNest Customer",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Pending Payment",
+                "action": "Confirm Payment",
+                "next_state": "Payment Received",
+                "allowed": "CraftNest Administrator",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Payment Received",
+                "action": "Start Processing",
+                "next_state": "Processing",
+                "allowed": "CraftNest Artisan",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Processing",
+                "action": "Mark Shipped",
+                "next_state": "Shipped",
+                "allowed": "CraftNest Delivery Staff",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Shipped",
+                "action": "Mark Delivered",
+                "next_state": "Delivered",
+                "allowed": "CraftNest Administrator",
+                "allow_self_approval": 1
+            },
+            {
+                "state": "Pending Payment",
+                "action": "Cancel",
+                "next_state": "Cancelled",
+                "allowed": "CraftNest Administrator",
+                "allow_self_approval": 1
+            }
+        ]
+    }
+]

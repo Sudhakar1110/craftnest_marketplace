@@ -1,0 +1,79 @@
+{
+ "charts": [],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Product Management\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Quick Access\",\"col\":12}},{\"type\":\"link\",\"data\":{\"text\":\"Craft Products\",\"link_to\":\"Craft Product\",\"link_type\":\"DocType\",\"col\":3}},{\"type\":\"link\",\"data\":{\"text\":\"Product Categories\",\"link_to\":\"Product Category\",\"link_type\":\"DocType\",\"col\":3}},{\"type\":\"link\",\"data\":{\"text\":\"Product Reviews\",\"link_to\":\"Product Review\",\"link_type\":\"DocType\",\"col\":3}},{\"type\":\"link\",\"data\":{\"text\":\"Product Performance\",\"link_to\":\"Product Performance Report\",\"link_type\":\"Report\",\"col\":3}}]",
+ "creation": "2026-06-18 10:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "octicon octicon-package",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "Product Management",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Craft Products",
+   "link_to": "Craft Product",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Product Categories",
+   "link_to": "Product Category",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Product Reviews",
+   "link_to": "Product Review",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Product Performance",
+   "link_to": "Product Performance Report",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Top Selling Products",
+   "link_to": "Top Selling Products",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Product Management",
+ "name": "Product Management",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "CraftNest Administrator"
+  },
+  {
+   "role": "CraftNest Artisan"
+  }
+ ],
+ "sequence_id": 3.0,
+ "title": "Product Management"
+}
