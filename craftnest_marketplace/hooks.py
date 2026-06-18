@@ -114,7 +114,12 @@ fixtures = [
     {"dt": "Workflow"},
     {"dt": "Workflow State"},
     {"dt": "Workflow Action Master"},
-    {"dt": "Notification", "filters": [["module", "=", "CraftNest Marketplace"]]}
+    {"dt": "Notification", "filters": [["module", "=", "CraftNest Marketplace"]]},
+    {"dt": "Quick List", "filters": [["name", "in", [
+        "Recent Artisans", "Recent Products", "Recent Customers",
+        "Recent Wishlists", "Pending Orders", "Recent Transactions",
+        "Pending Verifications"
+    ]]]}
 ]
 
 

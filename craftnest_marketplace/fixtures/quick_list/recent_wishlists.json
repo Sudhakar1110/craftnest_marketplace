@@ -1,0 +1,29 @@
+{
+ "columns": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer Profile",
+   "width": 200
+  },
+  {
+   "fieldname": "wishlist_name",
+   "fieldtype": "Data",
+   "label": "Wishlist",
+   "width": 200
+  }
+ ],
+ "creation": "2026-06-18 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Quick List",
+ "document_type": "Wishlist",
+ "filters": "[]",
+ "idx": 0,
+ "is_standard": 1,
+ "label": "Recent Wishlists",
+ "modified": "2026-06-18 10:00:00.000000",
+ "module": "Customer Management",
+ "name": "Recent Wishlists",
+ "owner": "Administrator"
+}

@@ -1,0 +1,40 @@
+{
+ "columns": [
+  {
+   "fieldname": "transaction_id",
+   "fieldtype": "Data",
+   "label": "Transaction ID",
+   "width": 150
+  },
+  {
+   "fieldname": "payment_method",
+   "fieldtype": "Data",
+   "label": "Payment Method",
+   "width": 120
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "width": 120
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "width": 100
+  }
+ ],
+ "creation": "2026-06-18 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Quick List",
+ "document_type": "Payment Transaction",
+ "filters": "[]",
+ "idx": 0,
+ "is_standard": 1,
+ "label": "Recent Transactions",
+ "modified": "2026-06-18 10:00:00.000000",
+ "module": "Payment Management",
+ "name": "Recent Transactions",
+ "owner": "Administrator"
+}

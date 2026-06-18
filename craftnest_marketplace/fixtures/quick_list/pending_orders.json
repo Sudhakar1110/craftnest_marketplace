@@ -1,0 +1,42 @@
+{
+ "columns": [
+  {
+   "fieldname": "name",
+   "fieldtype": "Link",
+   "label": "Order ID",
+   "options": "Craft Order",
+   "width": 150
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "label": "Customer",
+   "options": "Customer",
+   "width": 150
+  },
+  {
+   "fieldname": "total_amount",
+   "fieldtype": "Currency",
+   "label": "Amount",
+   "width": 120
+  },
+  {
+   "fieldname": "order_date",
+   "fieldtype": "Date",
+   "label": "Order Date",
+   "width": 100
+  }
+ ],
+ "creation": "2026-06-18 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Quick List",
+ "document_type": "Craft Order",
+ "filters": "[[\"status\", \"=\", \"Pending\"]]",
+ "idx": 0,
+ "is_standard": 1,
+ "label": "Pending Orders",
+ "modified": "2026-06-18 10:00:00.000000",
+ "module": "Order Management",
+ "name": "Pending Orders",
+ "owner": "Administrator"
+}

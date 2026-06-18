@@ -1,0 +1,35 @@
+{
+ "columns": [
+  {
+   "fieldname": "artisan",
+   "fieldtype": "Link",
+   "label": "Artisan",
+   "options": "Artisan Profile",
+   "width": 200
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Data",
+   "label": "Status",
+   "width": 150
+  },
+  {
+   "fieldname": "submitted_documents",
+   "fieldtype": "Small Text",
+   "label": "Documents",
+   "width": 200
+  }
+ ],
+ "creation": "2026-06-18 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Quick List",
+ "document_type": "Artisan Verification",
+ "filters": "[[\"workflow_state\", \"=\", \"Pending Review\"]]",
+ "idx": 0,
+ "is_standard": 1,
+ "label": "Pending Verifications",
+ "modified": "2026-06-18 10:00:00.000000",
+ "module": "Artisan Management",
+ "name": "Pending Verifications",
+ "owner": "Administrator"
+}

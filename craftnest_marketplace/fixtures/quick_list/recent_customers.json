@@ -1,0 +1,34 @@
+{
+ "columns": [
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "width": 200
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "width": 200
+  },
+  {
+   "fieldname": "loyalty_tier",
+   "fieldtype": "Data",
+   "label": "Loyalty Tier",
+   "width": 100
+  }
+ ],
+ "creation": "2026-06-18 10:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Quick List",
+ "document_type": "Customer Profile",
+ "filters": "[]",
+ "idx": 0,
+ "is_standard": 1,
+ "label": "Recent Customers",
+ "modified": "2026-06-18 10:00:00.000000",
+ "module": "Customer Management",
+ "name": "Recent Customers",
+ "owner": "Administrator"
+}
