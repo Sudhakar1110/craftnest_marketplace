@@ -20,7 +20,6 @@
  "source_document_type": "Craft Order",
  "time_interval": "Monthly",
  "timespan": "Last Year",
- "time_series_based_on": "order_date",
  "timeseries": 1,
  "type": "Group By",
  "value_based_on": "total_amount",
