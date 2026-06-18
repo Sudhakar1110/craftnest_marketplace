@@ -100,13 +100,6 @@ scheduler_events = {
 }
 
 
-# Overriding Methods
-# ------------------------------
-override_whitelisted_methods = {
-    "frappe.desk.form.load.getdoc": "craftnest_marketplace.api.form.getdoc"
-}
-
-
 # Fixtures
 # --------
 fixtures = [
