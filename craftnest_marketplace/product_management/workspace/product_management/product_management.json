@@ -1,6 +1,14 @@
 {
  "charts": [],
- "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Product Management\",\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Quick Access\",\"col\":12}},{\"type\":\"link\",\"data\":{\"text\":\"Craft Products\",\"link_to\":\"Craft Product\",\"link_type\":\"DocType\",\"col\":3}},{\"type\":\"link\",\"data\":{\"text\":\"Product Categories\",\"link_to\":\"Product Category\",\"link_type\":\"DocType\",\"col\":3}},{\"type\":\"link\",\"data\":{\"text\":\"Product Reviews\",\"link_to\":\"Product Review\",\"link_type\":\"DocType\",\"col\":3}},{\"type\":\"link\",\"data\":{\"text\":\"Product Performance\",\"link_to\":\"Product Performance Report\",\"link_type\":\"Report\",\"col\":3}}]",
+ "number_cards": [
+  {
+   "number_card_name": "Total Products"
+  },
+  {
+   "number_card_name": "Low Stock Items"
+  }
+ ],
+ "content": "[{\"type\":\"header\",\"data\":{\"text\":\"Product Management\",\"col\":12}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Total Products\",\"col\":6}},{\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Low Stock Items\",\"col\":6}},{\"type\":\"card_break\",\"data\":{\"col\":12}},{\"type\":\"header\",\"data\":{\"text\":\"Quick Access\",\"col\":12}},{\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Recent Products\",\"col\":6}},{\"type\":\"quick_list\",\"data\":{\"quick_list_name\":\"Low Stock Products\",\"col\":6}},{\"type\":\"card\",\"data\":{\"card_name\":\"Documents\",\"col\":6}},{\"type\":\"card\",\"data\":{\"card_name\":\"Reports\",\"col\":6}}]",
  "creation": "2026-06-18 10:00:00.000000",
  "custom_blocks": [],
  "docstatus": 0,
@@ -13,48 +21,43 @@
  "label": "Product Management",
  "links": [
   {
-   "hidden": 0,
-   "is_query_report": 0,
+   "type": "Card Break",
+   "label": "Documents",
+   "link_count": 3
+  },
+  {
    "label": "Craft Products",
    "link_to": "Craft Product",
    "link_type": "DocType",
-   "onboard": 0,
    "type": "Link"
   },
   {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Product Categories",
    "link_to": "Product Category",
    "link_type": "DocType",
-   "onboard": 0,
    "type": "Link"
   },
   {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Product Reviews",
    "link_to": "Product Review",
    "link_type": "DocType",
-   "onboard": 0,
    "type": "Link"
   },
   {
-   "hidden": 0,
-   "is_query_report": 0,
+   "type": "Card Break",
+   "label": "Reports",
+   "link_count": 2
+  },
+  {
    "label": "Product Performance",
    "link_to": "Product Performance Report",
    "link_type": "Report",
-   "onboard": 0,
    "type": "Link"
   },
   {
-   "hidden": 0,
-   "is_query_report": 0,
    "label": "Top Selling Products",
    "link_to": "Top Selling Products",
    "link_type": "Report",
-   "onboard": 0,
    "type": "Link"
   }
  ],
@@ -63,9 +66,16 @@
  "module": "Product Management",
  "name": "Product Management",
  "owner": "Administrator",
- "parent_page": "",
+ "parent_page": "CraftNest Dashboard",
  "public": 1,
- "quick_lists": [],
+ "quick_lists": [
+  {
+   "quick_list_name": "Recent Products"
+  },
+  {
+   "quick_list_name": "Low Stock Products"
+  }
+ ],
  "roles": [
   {
    "role": "CraftNest Administrator"

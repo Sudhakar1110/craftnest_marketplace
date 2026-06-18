@@ -11,12 +11,12 @@ app_license = "MIT"
 
 # Includes in <head>
 # ------------------
-app_include_css = "/assets/craftnest_marketplace/css/craftnest.css"
+# app_include_css = "/assets/craftnest_marketplace/css/craftnest.css"  # Commented out to use default ERPNext styling
 app_include_js = "/assets/craftnest_marketplace/js/craftnest.js"
 
 
 # include js, css files in header of web template
-web_include_css = "/assets/craftnest_marketplace/css/craftnest.css"
+# web_include_css = "/assets/craftnest_marketplace/css/craftnest.css"  # Commented out to use default ERPNext styling
 web_include_js = "/assets/craftnest_marketplace/js/shopping_cart.js"
 
 
