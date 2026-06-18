@@ -1,0 +1,60 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-06-18 10:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "document_type",
+  "document_file",
+  "column_break_3",
+  "description",
+  "uploaded_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "document_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Document Type",
+   "options": "ID Proof\nAddress Proof\nBusiness License\nTax Certificate\nOther"
+  },
+  {
+   "fieldname": "document_file",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Document File",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description"
+  },
+  {
+   "default": "Now",
+   "fieldname": "uploaded_on",
+   "fieldtype": "Datetime",
+   "label": "Uploaded On",
+   "read_only": 1
+  }
+ ],
+ "idx": 0,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-18 10:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Artisan Management",
+ "name": "Artisan Document",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "uploaded_on",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}
